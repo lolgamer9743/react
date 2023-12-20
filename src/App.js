@@ -12,6 +12,7 @@ function App(){
             <li><a href="#about">О городе</a></li>
             <li><a href="#gallery">Галерея</a></li>
             <li><a href="#map">Карта</a></li>
+            <span>lorem</span>
           </ul>
         </nav>    
       </header>
