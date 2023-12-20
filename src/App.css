@@ -1,0 +1,268 @@
+html,body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans', sans-serif;  
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h2 {
+  color: #2A3D8F;
+  font-size: 36px;
+  line-height: 49px;
+}
+
+h3 {
+  font-size: 30px;
+  line-height: 41px;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+.page-header {
+  margin-top: 10px;  
+  display: flex;
+  /* justify-content: flex-start; */
+}
+.main-menu{
+  /*занимаем оставшееся место в блоке*/
+  flex-grow: 1;
+}
+.main-menu-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.main-menu-list a {
+  font-size: 30px;
+  line-height: 41px;
+  color: #2A3D8F;
+}
+
+.main-menu-list a:hover {
+  color: #3893cc;
+}
+
+.slogan {
+  height: 558px;
+  background-image: url(img/innsbruck1.png);
+  background-color: #dbe8f7;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.slogan h1 {
+  margin: 0;
+  padding-top: 240px;
+  font-size: 60px;
+  line-height: 82px;
+  color: #FFFFFF;
+}
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about-numbers-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  padding-left: 20px;
+  /* transition: ease-out 5s; */
+}
+
+.about-numbers-list li::before {
+  content: "✓";
+  /* отступ между галочкой и текстом */
+  margin-right: 3px;
+}
+
+.marketing {
+  display: flex;
+  flex-direction: column;
+  background-image: url(img/skier.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center right;
+  width: 30%;
+}
+/* .marketing:hover{
+  transition: 5s;
+  transform: scale(0);
+} */
+.marketing p {
+  margin: 0;
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: 2vw;
+  line-height: 33px;
+}
+.marketing a{
+  text-transform: uppercase;
+  color: black;
+  align-self: flex-end;
+  /* text-align: right; */
+  margin-top: 60px;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 5px 10px;
+  width: auto;
+}
+.about-wether-graph{
+  border: thin black solid;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  /* transition: ease-in 5s; */
+}
+.about-wether-graph figcaption{
+  text-align: center;
+  padding: 5px;
+  font-size: 22px;
+  color: #FFFFFF;
+  background-color: #7d7c7c;
+  line-height: 33px;
+}
+/* .about-wether-graph:hover{
+  transition: 10s;
+  transform: translate(1000px);
+} */
+/* .page-footer{
+  display: flex;
+  justify-content: space-between;
+  transition: ease-in-out 5s;
+
+} */
+.footer-social{
+  list-style: none;
+  display: flex;
+  justify-content: space-between;  
+
+}
+.footer-social li{
+  margin: 10px;
+}
+.footer-wrapper{
+  background-color: #b5d4c5;
+}
+.map th,td{
+  border: #2A3D8F solid 1px;
+  padding: 5px;
+  width: 25%;
+}
+.map table{
+  border-collapse: collapse;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.map th{
+  background-color: #2A3D8F;
+  color: #FFFFFF;
+}
+/* .map:hover{
+  transition: 10s;
+  transform: rotate(25deg);
+} */
+.menu{
+  height: 45px;
+  background-color: #eceff1;
+}
+.gamburger{
+  display: none;
+}
+.header-list{
+  display: flex;
+  justify-content: space-around;
+  padding-top: 15px;
+}
+.header-list a{
+  color: black;
+  font-size: 20px;
+}
+@media (max-width:768px) {
+.menu{
+  display: none;
+}
+.gamburger{
+  display: block;
+}
+#menu-toggle{
+  opacity: 0;
+}
+.button-menu{
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 1;
+}
+.button-menu>span::before,.button-menu>span,.button-menu>span::after{
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  
+}
+.button-menu>span::before{
+  top: -8px;
+  content: "";
+}
+.button-menu>span::after{
+  top: 8px;
+  content: "";
+}
+.menu-box{
+  font-size: 20px;
+  text-align: center;
+  background-color: gold;
+  display: block;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  padding: 80px 0px;
+  left: 100%;
+  transition: 5s;
+  list-style: none;
+}
+.menu-box a{
+  color: black;
+  padding: 12px 24px;
+  display: block;
+  font-weight: 600;
+}
+#menu-toggle:checked~.menu-box{
+  left: 0;
+  transition: 1s;
+}
+#menu-toggle:checked~.button-menu>span{
+  transform: rotate(45deg);
+  transition: 1s;
+}
+#menu-toggle:checked~.button-menu>span::before{
+  transform: rotate(0deg);
+  top: 0;
+  transition: 1s;
+}
+#menu-toggle:checked~.button-menu>span::after{
+  top: 0;
+  transform: rotate(90deg);
+  transition: 1s;
+}
+}
